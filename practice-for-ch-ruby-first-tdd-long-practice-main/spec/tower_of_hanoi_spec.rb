@@ -16,9 +16,16 @@ describe TowersOfHanoi do
     end
 
     describe "#move" do
-        it "should move piece at end of row to specified row" do
-            hanoi.move(0, 2)
-            expect(hanoi.game).to eq([[0, 1], [], [2]])
+        context "with valid arguments" do
+            it "should move piece at end of row to specified row" do
+                hanoi.move(0, 2)
+                expect(hanoi.game).to eq([[0, 1], [], [2]])
+            end
+        end
+        context "with invalid arguments" do
+            it "Raises error if start is from an empty pile" do
+                expect{hanoi.move(1,2)}.to raise_error("Can't move from empty pile")
+            end
         end
     end
 

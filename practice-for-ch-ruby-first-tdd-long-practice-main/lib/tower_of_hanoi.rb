@@ -7,6 +7,7 @@ class TowersOfHanoi
 
     def move(start, finish)
         disk = self.game[start].pop
+        raise "Can't move from empty pile" if disk.nil?
         self.game[finish].push(disk)
     end
 
