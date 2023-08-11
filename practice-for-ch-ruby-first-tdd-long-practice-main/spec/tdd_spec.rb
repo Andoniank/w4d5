@@ -37,4 +37,6 @@ describe "tdd" do
             expect(stock_picker(array)).to eq([0,1])
         end
     end
+
 end
+
