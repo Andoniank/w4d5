@@ -29,4 +29,12 @@ describe "tdd" do
                 ])
         end
     end
+
+    describe "#stock_picker" do 
+        it "Returns most profitable pair of days on which to first buy
+        the stock and then to sell the stock" do
+            array = [3, 300, 15, 60, 100, 157]
+            expect(stock_picker(array)).to eq([0,1])
+        end
+    end
 end

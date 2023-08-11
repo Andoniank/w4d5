@@ -26,3 +26,25 @@ def my_transpose(array)
     end
     new_arr
 end
+
+def stock_picker(array)
+    current = array.first #Keep track of element to subtract from
+    max = array.first #Store biggest difference
+    pos1 = 0 #Going to hold position of day 1 buy of stock...eventual return value
+    pos2 = 0 #Going to hold position of day 2 sell fo stock...eventual return value
+
+    (1...array.length).each do |i|
+        if (current - array[i]) < 0 && (current - array[i]) < max
+            max = (current - array[i])
+            if i == 1
+                pos1 = (array.index(current))
+            else
+                pos1 = (array.index(current)) - 1 
+            end
+            pos2 = i
+        else
+            current = array[i]
+        end
+    end
+    return [pos1,pos2]
+end
