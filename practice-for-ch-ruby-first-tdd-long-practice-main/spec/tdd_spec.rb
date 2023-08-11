@@ -14,4 +14,19 @@ describe "tdd" do
             expect(two_sum(array)).to eq([[0, 4], [2, 3]])
         end
     end
+
+    describe "#my_transpose" do
+        it "convert between row oriented and column oriented representations" do
+            array = [
+                [1,2,3],
+                [4,5,6],
+                [7,8,9]
+            ]
+            expect(my_transpose(array)).to eq([ 
+                [1,4,7],
+                [2,5,8],
+                [3,6,9]
+                ])
+        end
+    end
 end

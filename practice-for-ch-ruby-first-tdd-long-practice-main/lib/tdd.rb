@@ -15,3 +15,14 @@ def two_sum(array)
     end
     new_arr
 end
+
+#Assume that amout of arrays and elements of arrays are equal
+def my_transpose(array)
+    new_arr = Array.new(array.length) {Array.new(array.length, 0)}
+    (0...array.length).each do |row|
+        (0...array.length).each do |col|
+            new_arr[col][row] = array[row][col]
+        end
+    end
+    new_arr
+end
