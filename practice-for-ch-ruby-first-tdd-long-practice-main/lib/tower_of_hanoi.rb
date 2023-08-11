@@ -11,6 +11,7 @@ class TowersOfHanoi
     end
 
     def won?
-        
+        return true if self.game == [[], [], [0,1,2]]
+        false
     end
 end
